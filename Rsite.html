@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI UGC That Gets Users</title>
+
+<style>
+@font-face {
+  font-family: "SF Pro";
+  src: local("SF Pro Display"), local("SF-Pro-Display");
+  font-display: swap;
+}
+
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --muted: #666;
+  --accent: #000000;
+  --radius: 20px;
+  --shadow: 0 8px 26px rgba(0,0,0,0.06);
+  --shadow-hover: 0 14px 40px rgba(0,0,0,0.12);
+  --transition: .3s cubic-bezier(.4,0,.2,1);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:"SF Pro",-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* HERO */
+.wrap{
+  max-width:1200px;
+  margin:auto;
+  text-align:center;
+  padding:80px 20px;
+}
+
+h1{
+  font-size:54px;
+  font-weight:800;
+  letter-spacing:-1px;
+}
+
+.subtitle{
+  color:var(--muted);
+  font-size:18px;
+  max-width:640px;
+  margin:18px auto 34px;
+}
+
+.hero-cta{
+  background:black;
+  color:white;
+  padding:14px 36px;
+  border-radius:999px;
+  display:inline-block;
+  font-size:16px;
+  font-weight:600;
+  transition:var(--transition);
+}
+.hero-cta:hover{
+  box-shadow:var(--shadow-hover);
+  transform:translateY(-2px);
+}
+
+/* AUTO + TOUCH SCROLL ROWS */
+.row{
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  padding:10px;
+  scroll-snap-type:x mandatory;
+}
+.row::-webkit-scrollbar{display:none;}
+
+/* VIDEO */
+.video-card{
+  width:180px;
+  height:320px;
+  border-radius:var(--radius);
+  overflow:hidden;
+  scroll-snap-align:center;
+  flex-shrink:0;
+  box-shadow:var(--shadow);
+  background:#eaeaea;
+  transition:var(--transition);
+}
+.video-card.dim{
+  filter:blur(10px) brightness(.7);
+  transform:scale(.88);
+  opacity:.6;
+}
+video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:var(--radius);
+}
+
+/* REVIEWS */
+.section-title{
+  font-size:34px;
+  font-weight:700;
+  margin:80px 0 20px;
+}
+
+.review-card{
+  min-width:280px;
+  background:white;
+  border-radius:var(--radius);
+  padding:20px;
+  scroll-snap-align:center;
+  box-shadow:var(--shadow);
+  text-align:left;
+  flex-shrink:0;
+  border:1px solid rgba(0,0,0,0.07);
+}
+.stars{
+  font-size:18px;
+  color:#3BB273; /* Green stars */
+  margin-bottom:8px;
+}
+.name{
+  font-weight:700;
+  margin-top:10px;
+}
+.role{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* PRICING */
+.pricing{
+  padding:100px 20px;
+  text-align:center;
+}
+.grid{
+  display:grid;
+  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  max-width:1000px;
+  margin:auto;
+}
+.card{
+  background:white;
+  padding:32px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  text-align:left;
+  border:1px solid rgba(0,0,0,0.08);
+  transition:var(--transition);
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-hover);
+}
+.card.premium{
+  background:black;
+  color:white;
+}
+
+.price{
+  font-size:42px;
+  font-weight:800;
+}
+.features{
+  margin-top:18px;
+  list-style:none;
+}
+.features li{
+  margin-bottom:10px;
+  font-size:15px;
+  line-height:1.4;
+  padding-left:8px;
+}
+.features li::before{
+  content:"• ";
+  font-weight:900;
+  margin-right:6px;
+}
+
+.cta{
+  margin-top:20px;
+  display:block;
+  width:100%;
+  padding:14px;
+  border-radius:12px;
+  background:black;
+  color:white;
+  font-weight:600;
+  text-align:center;
+  transition:var(--transition);
+}
+.card.premium .cta{
+  background:white;
+  color:black;
+}
+.cta:hover{
+  opacity:.8;
+}
+
+footer{
+  padding:50px 20px;
+  text-align:center;
+  font-size:14px;
+  color:var(--muted);
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<h1>AI UGC That Gets Users</h1>
+<p class="subtitle">AI trained avatars + premium mobile ad performance creatives built to convert installs.</p>
+<a class="hero-cta">Get Started</a>
+</div>
+
+<!-- VIDEO SLIDER -->
+<div class="row" id="videoSlider">
+  <div class="video-card"><video autoplay muted loop playsinline src="video1.mp4"></video></div>
+  <div class="video-card"><video autoplay muted loop playsinline src="video2.mp4"></video></div>
+  <div class="video-card"><video autoplay muted loop playsinline src="video3.mp4"></video></div>
+  <div class="video-card"><video autoplay muted loop playsinline src="video4.mp4"></video></div>
+</div>
+
+<!-- REVIEWS -->
+<h2 class="section-title">Client Results</h2>
+<div class="row" id="reviewSlider">
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    Insane CTR lift in just 48h.
+    <div class="name">Lina</div><div class="role">(Marketing Lead)</div>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    Outperformed every creator ad we had.
+    <div class="name">Jared</div><div class="role">(App Founder)</div>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    Clean delivery, direct conversion increase.
+    <div class="name">Morgan</div><div class="role">(Product Owner)</div>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    CPI dropped and install rate doubled.
+    <div class="name">Emily</div><div class="role">(Growth Manager)</div>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★☆</div>
+    Way faster turnaround than creators.
+    <div class="name">Kai</div><div class="role">(Acquisition Lead)</div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<section class="pricing">
+  <h2 class="section-title">Simple Pricing</h2>
+  <div class="grid">
+
+    <div class="card">
+      <div class="price">$97</div>
+      <ul class="features">
+        <li>1 conversion ad video</li>
+        <li>Script + avatar + delivery</li>
+        <li>1 revision</li>
+        <li>48h delivery</li>
+      </ul>
+      <a class="cta">Order Starter</a>
+    </div>
+
+    <div class="card premium">
+      <div class="price">$297</div>
+      <ul class="features">
+        <li>3 ad variants</li>
+        <li>3 avatars</li>
+        <li>Content calendar</li>
+        <li>Posting angles</li>
+        <li>Raw files included</li>
+      </ul>
+      <a class="cta">Choose Launch</a>
+    </div>
+
+    <div class="card">
+      <div class="price">$497</div>
+      <ul class="features">
+        <li>6 avatars</li>
+        <li>6 scripts</li>
+        <li>2 revisions each</li>
+        <li>Raw + edit files</li>
+        <li>Priority delivery</li>
+      </ul>
+      <a class="cta">Scale Growth</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>© 2025 AI UGC Studio</footer>
+
+<script>
+// Auto Scroll + Manual Touch Resume
+function autoScroll(row){
+  let pos = 0, dir = 1, stop = false;
+  function move(){
+    if(!stop){
+      pos += 0.6*dir;
+      if(pos >= row.scrollWidth - row.clientWidth) dir = -1;
+      if(pos <= 0) dir = 1;
+      row.scrollTo({ left: pos, behavior:"auto" });
+    }
+    requestAnimationFrame(move);
+  }
+  move();
+  row.addEventListener("touchstart",()=>stop=true);
+  row.addEventListener("touchend",()=>setTimeout(()=>stop=false,1300));
+  row.addEventListener("mousedown",()=>stop=true);
+  row.addEventListener("mouseup",()=>setTimeout(()=>stop=false,1300));
+}
+
+autoScroll(document.getElementById("videoSlider"));
+autoScroll(document.getElementById("reviewSlider"));
+</script>
+
+</body>
+</html>
