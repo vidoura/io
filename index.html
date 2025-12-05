@@ -287,7 +287,7 @@ footer{
 <div class="wrap">
 <h1>AI UGC That Gets Users</h1>
 <p class="subtitle">AI trained avatars + premium ad performance creatives built to convert installs.</p>
-<a class="hero-cta">Get Started</a>
+<a class="hero-cta" href="https://t.me/VidouraAi?start=ImReady" target="_blank">Get Started</a>
 </div>
 
 <!-- VIDEO SLIDER -->
@@ -359,7 +359,7 @@ footer{
       <li>1 revision</li>
       <li>48h delivery</li>
     </ul>
-    <a class="cta">Order</a>
+    <a class="cta" href="https://t.me/VidouraAi?start=Order" target="_blank">Starter</a>
   </div>
 
   <div class="card premium">
@@ -372,7 +372,7 @@ footer{
       <li>Posting angles</li>
       <li>Raw files included</li>
     </ul>
-    <a class="cta">Order</a>
+    <a class="cta" href="https://t.me/VidouraAi?start=Order" target="_blank">Launch</a>
   </div>
 
   <div class="card">
@@ -385,7 +385,7 @@ footer{
       <li>Raw + edit files</li>
       <li>Priority delivery</li>
     </ul>
-    <a class="cta">Order</a>
+    <a class="cta" href="https://t.me/VidouraAi?start=Order" target="_blank">Growth</a>
   </div>
 
 </div>
@@ -405,78 +405,7 @@ window.addEventListener("scroll", () => {
 <footer>© 2025 Vidoura, All Rights Reserved</footer>
 
 <script>
-function smoothAuto<div class="grid">
 
-  <div class="card">
-    <div class="pill">Starter</div>
-    <div class="price">$97</div>
-    <ul class="features">
-      <li>1 conversion ad video</li>
-      <li>Script + avatar + delivery</li>
-      <li>1 revision</li>
-      <li>48h delivery</li>
-    </ul>
-    <a class="cta">Order</a>
-  </div>
-
-  <div class="card premium">
-    <div class="pill">Launch (Best Value)</div>
-    <div class="price">$297</div>
-    <ul class="features">
-      <li>3 ad variants</li>
-      <li>3 avatars</li>
-      <li>Content calendar</li>
-      <li>Posting angles</li>
-      <li>Raw files included</li>
-    </ul>
-    <a class="cta">Order</a>
-  </div>
-
-  <div class="card">
-    <div class="pill">Growth</div>
-    <div class="price">$497</div>
-    <ul class="features">
-      <li>6 avatars</li>
-      <li>6 scripts</li>
-      <li>2 revisions each</li>
-      <li>Raw + edit files</li>
-      <li>Priority delivery</li>
-    </ul>
-    <a class="cta">Order</a>
-  </div>
-
-  </div>Scroll(row){
-  let stop = false;
-  let resumeTimer;
-  let speed = 0.45;
-
-  function auto(){
-    if(!stop){
-      row.scrollLeft += speed;
-      if(row.scrollLeft >= row.scrollWidth - row.clientWidth){
-        row.scrollLeft = 0; // clean restart, no rewind glitch
-      }
-    }
-    requestAnimationFrame(auto);
-  }
-
-  function pause(){
-    stop = true;
-    clearTimeout(resumeTimer);
-  }
-
-  function resume(){
-    resumeTimer = setTimeout(()=> stop = false, 1200);
-  }
-
-  row.addEventListener("touchstart", pause);
-  row.addEventListener("touchend", resume);
-  row.addEventListener("mousedown", pause);
-  row.addEventListener("mouseup", resume);
-  row.addEventListener("scroll", ()=> { pause(); resume(); });
-
-  auto();
-}
 
 smoothAutoScroll(document.getElementById("videoSlider"));
 smoothAutoScroll(document.getElementById("reviewSlider"));
